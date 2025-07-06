@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iPhone 16 Plus</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.1);
+      --text-light: #ccc;
+      --text-strong: #fff;
+      --btn-bg: #ffffff10;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .main1 {
+      width: 400px;
+      border-radius: 25px;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+      transition: all 0.4s ease;
+    }
+
+    .main2 img {
+      width: 100%;
+      display: block;
+      opacity: 1;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .h1 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-strong);
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      padding: 15px 20px;
+      color: var(--text-light);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .main3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .color-button {
+      height: 36px;
+      width: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .color-button:hover {
+      transform: scale(1.15);
+      border-color: #fff;
+    }
+
+    .h2 {
+      font-size: 22px;
+      color: var(--text-strong);
+      margin-left: auto;
+      font-weight: bold;
+    }
+
+    .main4 {
+      text-align: center;
+      padding: 25px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .main4 button {
+      background: var(--btn-bg);
+      color: #fff;
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .main4 button:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main1">
+    <div class="main2">
+      <img id="productImage" src="iphone.png" alt="iPhone 16 Plus" />
+      <h1 class="h1">iPhone 16 Plus</h1>
+      <p>
+        Discover the future of smartphones. iPhone 16 Plus combines elegant craftsmanship, top-tier performance, and
+        advanced photography — designed to redefine luxury.
+      </p>
+    </div>
+
+    <div class="main3">
+      <div class="color-button" style="background-color: black;" onclick="changeColor('black')"></div>
+      <div class="color-button" style="background-color: royalblue;" onclick="changeColor('blue')"></div>
+      <div class="color-button" style="background-color: silver;" onclick="changeColor('silver')"></div>
+      <div class="color-button" style="background-color: #77a175;" onclick="changeColor('green')"></div>
+      <div class="color-button" style="background-color: #F2ADDA;" onclick="changeColor('pink')"></div>
+      <h1 class="h2">$799.00</h1>
+    </div>
+
+    <div class="main4">
+      <button>Buy Now</button>
+    </div>
+  </div>
+
+  <script>
+    const productImage = document.getElementById('productImage');
+
+    function changeColor(color) {
+      productImage.style.opacity = 0;
+
+      setTimeout(() => {
+        switch (color) {
+          case 'black':
+            productImage.src = 'iphone.png';
+            break;
+          case 'blue':
+            productImage.src = 'iphone2.png';
+            break;
+          case 'silver':
+            productImage.src = 'iphone3.png';
+            break;
+          case 'green':
+            productImage.src = 'iphone4.png';
+            break;
+          case 'pink':
+            productImage.src = 'iphone5.png';
+            break;
+        }
+        productImage.style.opacity = 1;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
